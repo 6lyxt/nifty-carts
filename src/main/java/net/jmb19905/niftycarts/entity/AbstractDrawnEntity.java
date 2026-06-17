@@ -395,6 +395,11 @@ public abstract class AbstractDrawnEntity extends Entity {
         final double x;
         final double y;
         final double z;
+
+          if (this.pulling == null) {
+            return Vec3.ZERO;
+        }
+        
         if (delta == 1.0F) {
             x = this.pulling.getX() - this.getX();
             y = this.pulling.getY() - this.getY();
